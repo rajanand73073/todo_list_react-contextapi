@@ -15,11 +15,16 @@ const App = () => {
  }
 
  const deleteTodo =(id)=>{
-  settodos((prevtodos)=> prevtodos.filter((prevtodo)=>prevtodo.id !==id))
+  settodos((prevtodos)=> prevtodos.filter((prevtodo)=> prevtodo.id !==id))
+
+
+  
  }
 
- const toggleComplete =( id )=>{
-  settodos((prevtodos)=>prevtodos.map((prevtodo)=>(prevtodo.id ===id?{...prevtodo,completed:!prevtodo.completed}:prevtodo)))
+ const toggleComplete = (id)=>{
+
+  
+  settodos((prevtodos)=>prevtodos.map((prevtodo)=>(prevtodo.id === id?{...prevtodo,completed:!prevtodo.completed}:prevtodo)))
  }
 
  useEffect(() => {
@@ -37,7 +42,7 @@ const App = () => {
  
 
   return (
-    <TodoProvider value={{todos,addTodo,deleteTodo,updateTodo}}>
+    <TodoProvider value={{todos,addTodo,deleteTodo,updateTodo,toggleComplete}}>
       <div className="bg-[#172842] min-h-screen py-8">
                 <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
                     <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
